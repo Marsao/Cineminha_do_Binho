@@ -4,14 +4,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 
-    <!-- CSRF Token -->
+
+    <!-- CSRF Token     -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
     <title>Bem-Vindo XD</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    
 
     <!-- Scripts -->
     <script>
@@ -22,18 +26,24 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="nav-wrapper">
             <div class="container">
-                <div class="navbar-header">
+              
 
                     <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
+                   <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="{{route('filmes.create')}}">Filme</a></li>
+                        <li><a href="{{route('generos.create')}}">Gêneros</a></li>
+                        <li><a href="{{route('atores.create')}}">Atores</a></li>
+                        <li><a href="{{route('lista.create')}}">Playlist</a></li>           
+                        <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Sair</a></li>
+    
+                    </ul>
+                    
+                   
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         Cineminha do Binho
@@ -58,14 +68,6 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Sair
-                                        </a>
-
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
@@ -77,11 +79,11 @@
                 </div>
             </div>
         </nav>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
         @yield('content')
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <!-- Scripts -->   
+
 </body>
 </html>

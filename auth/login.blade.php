@@ -70,7 +70,7 @@
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Esqueceu sua senha?
+                                    Esquecue sua senha?
                                 </a>
                             </div>
                         </div>

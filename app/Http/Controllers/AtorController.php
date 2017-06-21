@@ -34,7 +34,7 @@ class AtorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Ator $atores)
     {
         $ator = new Ator();
         $ator->nome = $request->nome;

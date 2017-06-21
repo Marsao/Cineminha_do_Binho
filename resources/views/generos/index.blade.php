@@ -1,28 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title></title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-</head>
-
-<body>
-
+@extends('layouts.app')
+@section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <h1 class="page-header">Lista de Gêneros</h1>
 
-                <a href="/generos/create" class="btn btn-primary" style="margin-bottom: 15px;">Cadastrar</a>
+                <a href="{{route('generos.create')}}" class="btn btn-primary" style="margin-bottom: 15px;">Cadastrar</a>
 
                 <div class="panel panel-primary">
                     <div class="panel-heading">Tabela de dados</div>
-                    <div class="panel-body">
+                        <div class="panel-body">
 
 
-                        
+                            
 
                         <table class="table table-striped">
                             <thead>
@@ -58,7 +48,4 @@
         </div>
     </div>
 
-
-</body>
-
-</html>
+@endsection

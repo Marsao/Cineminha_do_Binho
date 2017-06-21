@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title></title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-</head>
-
-<body>
 
 
 @extends('layouts.app')
@@ -30,13 +19,18 @@
                     </div>
 
                     <button class="btn btn-success" type="submit">Cadastrar</button>
+                    <br>
+                    <br>
+                    <label>Mostrar Gênero Cadastrados</label>
+                    <br>
+                    <a class="btn" href="{{route('generos.index')}}">
+                        Mostrar
+                        </a>
 
                 </form>
             </div>
         </div>
     </div>
     @endsection
-</body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-</html>
+
 

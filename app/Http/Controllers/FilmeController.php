@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Lista;
 use App\Filme;
 use App\Genero;
 use App\Ator;
@@ -18,7 +18,6 @@ class FilmeController extends Controller
     {
         
        $filmes = Filme::with(['genero', 'ator'])->get();
-
         return view('filmes.index', compact('filmes'));
     }
 
@@ -43,9 +42,6 @@ class FilmeController extends Controller
      */
     public function store(Request $request)
     {
-
-       
-
         $filme = new Filme();
         $filme->titulo = $request->titulo;
         $filme->ano = $request->ano;
@@ -54,7 +50,7 @@ class FilmeController extends Controller
 
         $filme->save();
 
-        return redirect('filmes');
+        return redirect('/filmes');
     }
 
     /**
@@ -99,6 +95,7 @@ class FilmeController extends Controller
      */
     public function destroy(Filme $filme)
     {
-        //
+        $filme->delete();
+        return redirect('/filmes');
     }
 }

@@ -15,4 +15,9 @@ class Filme extends Model
     {
         return $this->belongsTo('App\Ator');
     }
+    public function listas()
+    {
+        return $this->belongsToMany('App\Lista');
+            
+    }
 }

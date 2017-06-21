@@ -1,6 +1,7 @@
-@extends('layouts.site')
+@extends('layouts.app')
     
-@section('conteudo')
+@section('content')
+<div class="container">
 <div class="row">
 
     <h1 class="page-header">Inserção de Atores</h1>
@@ -24,10 +25,12 @@
             
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
+            <label >Ver atores já cadastrados</label><br>
+                <a class="btn" href="{{route('atores.index')}}">Mostrar</a>
     </div>
+</div>
 </div>
 @endsection
 
 
-@section('titulo', 'Página de cadastro de Atores')
 

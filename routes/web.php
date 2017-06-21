@@ -10,10 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
 
-Route::get('/', 'HomeController@index');
-route::get('/inicio', 'SiteController@inicio')    ->name('principal');
+route::get('/inicio', 'SiteController@inicio')->name('principal');
   
 
 route::get('/form', 'Sitecontroller@form');
@@ -24,6 +22,12 @@ route::group(['middleware' => 'auth'], function(){
 Route::resource('atores', 'AtorController');
 Route::resource('filmes', 'FilmeController');
 Route::resource('generos', 'GeneroController');
+route::resource('lista', 'ListaController');
+route::post('lista.show', 'listaController@addfilme');
 });
+Auth::routes();
+
+Route::get('/home' , 'HomeController@index');
+Route::get('/' , 'HomeController@index');
 
 

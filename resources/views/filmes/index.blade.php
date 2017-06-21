@@ -1,29 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title></title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-</head>
-
-<body>
-
+@extends('layouts.app')
+@section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="page-header">
-                    Lista de Filmes 
-                <a href="/filmes/create" class="btn btn-primary">Cadastrar novo filme</a>
+                <h1 class="page-header"></h1>
+                    Lista de Filmes <br>
+                <a href="{{route('filmes.create')}}" class="btn btn-primary">Cadastrar novo filme</a>
 
 
                 <div class="panel panel-default">
                     <div class="panel-heading">Dados da tabela</div>
                     <div class="panel-body">
 
-                        <table class="table table-striped">
+                        <table class="table highlight bordered resposive-table">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -71,7 +60,4 @@
             </div>
         </div>
     </div>
-
-</body>
-
-</html>
+@endsection
